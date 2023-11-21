@@ -1,0 +1,16 @@
+name: Luis
+version: '${project.version}'
+main: org.darkexplosiveqwx.luis.Luis
+api-version: '1.20'
+load: STARTUP
+commands:
+  faction:
+    description: Choose a Faction between Diamond, Emerald and Netherite by adding it as an Argument.
+    usage: /faction <Faction Name, either Diamond,Emerald or Netherithe>
+  elect:
+    aliases:
+      - king
+      - vote
+      - select
+    description: Elect the King of your Faction.
+    usage: /elect <Player Name>
