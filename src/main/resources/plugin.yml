@@ -3,6 +3,10 @@ version: '${project.version}'
 main: org.darkexplosiveqwx.luis.Luis
 api-version: '1.20'
 load: STARTUP
+permissions:
+  luis.admin:
+    description: allows running of administrative commands within luis
+    default: op
 commands:
   faction:
     description: Choose a Faction between Diamond, Emerald and Netherite by adding it as an Argument.
@@ -11,6 +15,7 @@ commands:
     aliases:
       - king
       - vote
-      - select
     description: Elect the King of your Faction.
     usage: /elect <Player Name>
+  endvote:
+    description: Ends the voting Process.
