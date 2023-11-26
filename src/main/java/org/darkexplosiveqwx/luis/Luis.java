@@ -22,6 +22,7 @@ public final class Luis extends JavaPlugin  {
         Objects.requireNonNull(getCommand("faction")).setExecutor(new FactionCommand());
         Objects.requireNonNull(getCommand("elect")).setExecutor(new ElectCommand());
         Objects.requireNonNull(getCommand("endvote")).setExecutor(new EndVoteCommand());
+        Objects.requireNonNull(getCommand("king")).setExecutor(new KingCommand());
 
 
         System.out.println("Plugin Started!");

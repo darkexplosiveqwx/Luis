@@ -1,8 +1,6 @@
 package org.darkexplosiveqwx.luis.Commands;
 
-import org.bukkit.ChatColor;
-import org.bukkit.NamespacedKey;
-import org.bukkit.Server;
+import org.bukkit.*;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.bukkit.persistence.*;
@@ -25,8 +23,8 @@ public class ElectCommand implements CommandExecutor {
                 if (Objects.equals(data.get(key, PersistentDataType.STRING), "Diamond") || Objects.equals(data.get(key, PersistentDataType.STRING),"Emerald")||
                         Objects.equals(data.get(key, PersistentDataType.STRING),"Netherite")){
                     if (args.length != 1){
-                        p.sendMessage("Provide a Player From your Faction that is currently online.");
-                        p.sendMessage("Example: /elect UrMom");
+                        p.sendMessage(ChatColor.RED + "Provide a Player From your Faction that is currently online.");
+                        p.sendMessage(ChatColor.RED + "Example: /elect UrMom");
                     } else {
                         String targetPlayerName = args[0];
                         Player targetedPlayer = server.getPlayerExact(targetPlayerName);
@@ -50,6 +48,7 @@ public class ElectCommand implements CommandExecutor {
                                         targetedPlayerData.set(votesKey,PersistentDataType.INTEGER,targetedPlayerData.get(votesKey,PersistentDataType.INTEGER) + 1);
                                     }
                                     data.set(hasVotedKey,PersistentDataType.BOOLEAN,true);
+                                    p.sendMessage(ChatColor.GREEN + "You voted for " + targetedPlayer.getName() + " .");
                                 }
                             }else {
                                 p.sendMessage(ChatColor.RED + "This Player is not from your Faction.");

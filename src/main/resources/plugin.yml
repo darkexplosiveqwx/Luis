@@ -13,9 +13,13 @@ commands:
     usage: /faction <Faction Name, either Diamond,Emerald or Netherithe>
   elect:
     aliases:
-      - king
       - vote
     description: Elect the King of your Faction.
     usage: /elect <Player Name>
   endvote:
     description: Ends the voting Process.
+    usage: /endvote
+  king:
+    description: Makes a player the king of their faction.
+    usage: /king <Player Name>
+    permission: luis.admin
